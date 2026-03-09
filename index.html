@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sports Schedule &mdash; March 8, 2026</title>
+<title>Weekly Sports Schedule &mdash; March 8, 2026 to March 14, 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -25,6 +25,65 @@
   header p { color: #888; font-size: 14px; }
   a { color: inherit; text-decoration: none; }
   a:hover { text-decoration: underline; text-decoration-color: #555; }
+
+  /* Tab bar */
+  .tab-bar {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #2a2a4a;
+    padding-bottom: 0;
+    overflow-x: auto;
+  }
+  .tab-btn {
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 16px 12px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-family: inherit;
+  }
+  .tab-btn:hover { color: #ccc; }
+  .tab-btn.active {
+    color: #6bcb77;
+    border-bottom-color: #6bcb77;
+  }
+  .tab-count {
+    font-size: 11px;
+    font-weight: 400;
+    color: #666;
+  }
+  .tab-btn.active .tab-count { color: #4a9; }
+  .today-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #6bcb77;
+    border-radius: 50%;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+
+  /* Day panels */
+  .day-header {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    padding: 8px 0 12px;
+    border-bottom: 1px solid #2a2a4a;
+    margin-bottom: 8px;
+  }
+
   details {
     background: #16213e;
     border: 1px solid #2a2a4a;
@@ -106,15 +165,21 @@
 <div class="container">
 
 <header>
-  <h1>Sports Schedule</h1>
-  <p>March 8, 2026 &mdash; All times Pacific</p>
+  <h1>Weekly Sports Schedule</h1>
+  <p>March 8, 2026 &ndash; March 14, 2026 &mdash; All times Pacific</p>
 </header>
 
-<details open>
-  <summary>Today's Games &mdash; 211 across all leagues <span class="section-badge">ESPN API</span></summary>
-  <div class="section-content">
+<div class="tab-bar">
+<button class="tab-btn active" data-day="0" title="Sun, Mar 8">Today <span class="today-dot"></span><span class="tab-count">209</span></button>
+<button class="tab-btn" data-day="1" title="Mon, Mar 9">Mon<span class="tab-count">77</span></button>
+<button class="tab-btn" data-day="2" title="Tue, Mar 10">Tue<span class="tab-count">163</span></button>
+<button class="tab-btn" data-day="3" title="Wed, Mar 11">Wed<span class="tab-count">114</span></button>
+<button class="tab-btn" data-day="4" title="Thu, Mar 12">Thu<span class="tab-count">113</span></button>
+<button class="tab-btn" data-day="5" title="Fri, Mar 13">Fri<span class="tab-count">177</span></button>
+<button class="tab-btn" data-day="6" title="Sat, Mar 14">Sat<span class="tab-count">195</span></button>
+</div>
 
-    <div class="sport-league"><a href="https://www.espn.com/nba/schedule" target="_blank">NBA</a> &mdash; 10 games</div>
+<div class="day-panel" id="day-0" style="display: block;"><div class="day-header">Sun, Mar 8 &mdash; 209 games</div>    <div class="sport-league"><a href="https://www.espn.com/nba/schedule" target="_blank">NBA</a> &mdash; 10 games</div>
     <table>
       <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
       <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810776/celtics-cavaliers" target="_blank">Boston Celtics at Cleveland Cavaliers</a></td><td>10:00 AM</td><td><span class="tv-badge tv-yes">ABC</span></td></tr>
@@ -122,10 +187,10 @@
       <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810778/pistons-heat" target="_blank">Detroit Pistons at Miami Heat</a></td><td>3:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN Sun</span></td></tr>
       <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810779/mavericks-raptors" target="_blank">Dallas Mavericks at Toronto Raptors</a></td><td>3:00 PM</td><td><span class="tv-badge tv-yes">Sportsnet</span></td></tr>
       <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810780/wizards-pelicans" target="_blank">Washington Wizards at New Orleans Pelicans</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">MNMT</span></td></tr>
-      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810781/magic-bucks" target="_blank">Orlando Magic at Milwaukee Bucks</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN WI</span></td></tr>
-      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810782/rockets-spurs" target="_blank">Houston Rockets at San Antonio Spurs</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">NBC</span></td></tr>
-      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810784/pacers-trail-blazers" target="_blank">Indiana Pacers at Portland Trail Blazers</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">KUNP 16</span></td></tr>
-      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810785/bulls-kings" target="_blank">Chicago Bulls at Sacramento Kings</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">NBC Sports CA</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game?gameId=401810781" target="_blank">Orlando Magic at Milwaukee Bucks</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN WI</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game?gameId=401810782" target="_blank">Houston Rockets at San Antonio Spurs</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">NBC</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game?gameId=401810784" target="_blank">Indiana Pacers at Portland Trail Blazers</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">KUNP 16</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game?gameId=401810785" target="_blank">Chicago Bulls at Sacramento Kings</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">NBC Sports CA</span></td></tr>
       <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810783/hornets-suns" target="_blank">Charlotte Hornets at Phoenix Suns</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">NBCSN</span></td></tr>
     </table>
     <div class="sport-league"><a href="https://www.espn.com/nhl/schedule" target="_blank">NHL</a> &mdash; 7 games</div>
@@ -136,8 +201,8 @@
       <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803354/lightning-sabres" target="_blank">Tampa Bay Lightning at Buffalo Sabres</a></td><td>3:00 PM</td><td><span class="tv-badge tv-yes">MSGB</span></td></tr>
       <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803355/blackhawks-stars" target="_blank">Chicago Blackhawks at Dallas Stars</a></td><td>3:00 PM</td><td><span class="tv-badge tv-yes">CHSN</span></td></tr>
       <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803356/red-wings-devils" target="_blank">Detroit Red Wings at New Jersey Devils</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
-      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803357/blues-ducks" target="_blank">St. Louis Blues at Anaheim Ducks</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN MW</span></td></tr>
-      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803358/oilers-golden-knights" target="_blank">Edmonton Oilers at Vegas Golden Knights</a></td><td>6:30 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803357" target="_blank">St. Louis Blues at Anaheim Ducks</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN MW</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803358" target="_blank">Edmonton Oilers at Vegas Golden Knights</a></td><td>6:45 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
     </table>
     <div class="sport-league"><a href="https://www.espn.com/mlb/schedule" target="_blank">MLB</a> &mdash; 17 games</div>
     <table>
@@ -163,19 +228,19 @@
     <div class="sport-league"><a href="https://www.espn.com/mens-college-basketball/schedule" target="_blank">NCAA Men's Basketball</a> &mdash; 32 games (14 televised)</div>
     <table>
       <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game?gameId=401851756" target="_blank">San Francisco Dons @ Oregon State Beavers</a></td><td>5:30 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game?gameId=401851629" target="_blank">North Dakota Fighting Hawks @ North Dakota State Bison</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401825568/michigan-st-michigan" target="_blank">Michigan State Spartans @ Michigan Wolverines</a></td><td>1:30 PM</td><td><span class="tv-badge tv-yes">CBS</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401825569/iowa-nebraska" target="_blank">Iowa Hawkeyes @ Nebraska Cornhuskers</a></td><td>2:00 PM</td><td><span class="tv-badge tv-yes">FOX</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401825567/illinois-maryland" target="_blank">Illinois Fighting Illini @ Maryland Terrapins</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">FOX</span></td></tr>
       <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851547/colgate-lehigh" target="_blank">Colgate Raiders @ Lehigh Mountain Hawks</a></td><td>9:00 AM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
       <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851494/northern-iowa-uic" target="_blank">Northern Iowa Panthers @ UIC Flames</a></td><td>9:00 AM</td><td><span class="tv-badge tv-yes">CBS</span></td></tr>
       <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851353/winthrop-high-point" target="_blank">Winthrop Eagles @ High Point Panthers</a></td><td>9:00 AM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
       <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401825570/penn-state-rutgers" target="_blank">Penn State Nittany Lions @ Rutgers Scarlet Knights</a></td><td>9:00 AM</td><td><span class="tv-badge tv-yes">BTN</span></td></tr>
       <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851548/boston-u-navy" target="_blank">Boston University Terriers @ Navy Midshipmen</a></td><td>11:00 AM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
       <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851251/queens-c-arkansas" target="_blank">Queens University Royals @ Central Arkansas Bears</a></td><td>11:00 AM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
-      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401825567/illinois-maryland" target="_blank">Illinois Fighting Illini @ Maryland Terrapins</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">FOX</span></td></tr>
       <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851589/w-carolina-etsu" target="_blank">Western Carolina Catamounts @ East Tennessee State Buccaneers</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
-      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401825568/michigan-st-michigan" target="_blank">Michigan State Spartans @ Michigan Wolverines</a></td><td>1:30 PM</td><td><span class="tv-badge tv-yes">CBS</span></td></tr>
-      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401825569/iowa-nebraska" target="_blank">Iowa Hawkeyes @ Nebraska Cornhuskers</a></td><td>2:00 PM</td><td><span class="tv-badge tv-yes">FOX</span></td></tr>
       <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851591/unc-greensboro-furman" target="_blank">UNC Greensboro Spartans @ Furman Paladins</a></td><td>3:30 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
-      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851756/san-francisco-oregon-st" target="_blank">San Francisco Dons @ Oregon State Beavers</a></td><td>5:30 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
-      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851629/north-dakota-n-dakota-st" target="_blank">North Dakota Fighting Hawks @ North Dakota State Bison</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
       <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851757/pacific-santa-clara" target="_blank">Pacific Tigers @ Santa Clara Broncos</a></td><td>8:00 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
     </table>
     <details style="background: #121a33; border: 1px solid #222; margin-top: 4px;">
@@ -183,10 +248,15 @@
       <div class="section-content">
         <table>
           <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851329/idaho-st-portland-st" target="_blank">Idaho State Bengals @ Portland State Vikings</a></td><td>4:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game?gameId=401856430" target="_blank">William &amp; Mary Tribe @ Hofstra Pride</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game?gameId=401851604" target="_blank">Northwestern State Demons @ Nicholls Colonels</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game?gameId=401851466" target="_blank">Fairfield Stags @ Siena Saints</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game?gameId=401851705" target="_blank">Georgia Southern Eagles @ Marshall Thundering Herd</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401856427/campbell-unc-wilmington" target="_blank">Campbell Fighting Camels @ UNC Wilmington Seahawks</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
         <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401828264/memphis-tulane" target="_blank">Memphis Tigers @ Tulane Green Wave</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401828263/charlotte-south-florida" target="_blank">Charlotte 49ers @ South Florida Bulls</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
-        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401856428/drexel-monmouth" target="_blank">Drexel Dragons @ Monmouth Hawks</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401856428/drexel-monmouth" target="_blank">Drexel Dragons @ Monmouth Hawks</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
         <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401828266/temple-tulsa" target="_blank">Temple Owls @ Tulsa Golden Hurricane</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401828265/utsa-rice" target="_blank">UTSA Roadrunners @ Rice Owls</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401828262/east-carolina-uab" target="_blank">East Carolina Pirates @ UAB Blazers</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
@@ -195,11 +265,6 @@
         <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851704/southern-miss-troy" target="_blank">Southern Miss Golden Eagles @ Troy Trojans</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851602/hou-christian-new-orleans" target="_blank">Houston Christian Huskies @ New Orleans Privateers</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851465/marist-merrimack" target="_blank">Marist Red Foxes @ Merrimack Warriors</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
-        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851329/idaho-st-portland-st" target="_blank">Idaho State Bengals @ Portland State Vikings</a></td><td>4:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
-        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401856430/william-mary-hofstra" target="_blank">William &amp; Mary Tribe @ Hofstra Pride</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
-        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851705/ga-southern-marshall" target="_blank">Georgia Southern Eagles @ Marshall Thundering Herd</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
-        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851604/nwestern-st-nicholls" target="_blank">Northwestern State Demons @ Nicholls Colonels</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
-        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851466/fairfield-siena" target="_blank">Fairfield Stags @ Siena Saints</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851331/idaho-montana-st" target="_blank">Idaho Vandals @ Montana State Bobcats</a></td><td>7:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         </table>
       </div>
@@ -207,14 +272,14 @@
     <div class="sport-league"><a href="https://www.espn.com/womens-college-basketball/schedule" target="_blank">NCAA Women's Basketball</a> &mdash; 26 games (10 televised)</div>
     <table>
       <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
-      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851634/samford-chattanooga" target="_blank">Samford Bulldogs @ Chattanooga Mocs</a></td><td>9:00 AM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
-      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851197/louisville-duke" target="_blank">Louisville Cardinals @ Duke Blue Devils</a></td><td>10:00 AM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
-      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851399/iowa-ucla" target="_blank">Iowa Hawkeyes @ UCLA Bruins</a></td><td>11:15 AM</td><td><span class="tv-badge tv-yes">CBS</span></td></tr>
       <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851327/creighton-uconn" target="_blank">Creighton Bluejays @ UConn Huskies</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851399/iowa-ucla" target="_blank">Iowa Hawkeyes @ UCLA Bruins</a></td><td>11:15 AM</td><td><span class="tv-badge tv-yes">CBS</span></td></tr>
       <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851618/texas-south-carolina" target="_blank">Texas Longhorns @ South Carolina Gamecocks</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
-      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851732/s-dakota-st-n-dakota-st" target="_blank">South Dakota State Jackrabbits @ North Dakota State Bison</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
-      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851271/george-mason-rhode-island" target="_blank">George Mason Patriots @ Rhode Island Rams</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
       <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851307/west-virginia-tcu" target="_blank">West Virginia Mountaineers @ TCU Horned Frogs</a></td><td>2:00 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851197/louisville-duke" target="_blank">Louisville Cardinals @ Duke Blue Devils</a></td><td>10:00 AM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851634/samford-chattanooga" target="_blank">Samford Bulldogs @ Chattanooga Mocs</a></td><td>9:00 AM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851271/george-mason-rhode-island" target="_blank">George Mason Patriots @ Rhode Island Rams</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851732/s-dakota-st-n-dakota-st" target="_blank">South Dakota State Jackrabbits @ North Dakota State Bison</a></td><td>1:15 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
       <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851328/seton-hall-villanova" target="_blank">Seton Hall Pirates @ Villanova Wildcats</a></td><td>2:00 PM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
       <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851361/radford-high-point" target="_blank">Radford Highlanders @ High Point Panthers</a></td><td>3:00 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
     </table>
@@ -223,11 +288,12 @@
       <div class="section-content">
         <table>
           <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game?gameId=401851536" target="_blank">Fresno State Bulldogs @ UNLV Lady Rebels</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">MWN</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851469/merrimack-fairfield" target="_blank">Merrimack Warriors @ Fairfield Stags</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851468/iona-quinnipiac" target="_blank">Iona Gaels @ Quinnipiac Bobcats</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851755/james-madison-ga-southern" target="_blank">James Madison Dukes @ Georgia Southern Eagles</a></td><td>9:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851444/iu-indy-purdue-fw" target="_blank">IU Indianapolis Jaguars @ Purdue Fort Wayne Mastodons</a></td><td>10:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851339/weber-st-idaho" target="_blank">Weber State Wildcats @ Idaho Vandals</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
-        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851469/merrimack-fairfield" target="_blank">Merrimack Warriors @ Fairfield Stags</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851826/portland-oregon-st" target="_blank">Portland Pilots @ Oregon State Beavers</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851758/arkansas-st-troy" target="_blank">Arkansas State Red Wolves @ Troy Trojans</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851533/air-force-san-diego-st" target="_blank">Air Force Falcons @ San Diego State Aztecs</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">MWN</span></td></tr>
@@ -237,7 +303,6 @@
         <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851340/montana-montana-st" target="_blank">Montana Lady Griz @ Montana State Bobcats</a></td><td>1:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851827/san-francisco-santa-clara" target="_blank">San Francisco Dons @ Santa Clara Broncos</a></td><td>2:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
         <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851535/boise-st-new-mexico" target="_blank">Boise State Broncos @ New Mexico Lobos</a></td><td>2:30 PM</td><td><span class="tv-badge tv-yes">MWN</span></td></tr>
-        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851536/fresno-st-unlv" target="_blank">Fresno State Bulldogs @ UNLV Lady Rebels</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">MWN</span></td></tr>
         <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851537/grand-canyon-colorado-st" target="_blank">Grand Canyon Lopes @ Colorado State Rams</a></td><td>7:30 PM</td><td><span class="tv-badge tv-yes">MWN</span></td></tr>
         </table>
       </div>
@@ -298,9 +363,8 @@
       <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401840902/fc-juarez-toluca" target="_blank">FC Juarez at Toluca</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
       <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401840903/santos-tijuana" target="_blank">Santos at Tijuana</a></td><td>8:06 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
     </table>
-
     <details style="background: #121a33; border: 1px solid #222; margin-top: 8px;">
-      <summary style="font-size: 13px; padding: 10px 14px; color: #888;">Other Sports <span class="section-badge">PGA Tour (2) &middot; NASCAR Cup (1) &middot; College Baseball (92)</span></summary>
+      <summary style="font-size: 13px; padding: 10px 14px; color: #888;">Other Sports <span class="section-badge">PGA Tour (2) &middot; NASCAR Cup (1) &middot; College Baseball (90)</span></summary>
       <div class="section-content">
     <div class="sport-league"><a href="https://www.espn.com/golf/schedule" target="_blank">PGA Tour</a> &mdash; 2 games</div>
     <table>
@@ -313,16 +377,1005 @@
       <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
       <tr><td><a href="https://www.vividseats.com/nascar-racing/monster-energy-nascar-cup-series-tickets.html" target="_blank">NASCAR Cup Series at Phoenix</a></td><td>12:30 PM</td><td><span class="tv-badge tv-yes">FS1</span></td></tr>
     </table>
-    <div class="sport-league"><a href="https://www.espn.com/college-baseball/schedule" target="_blank">College Baseball</a> &mdash; 92 games</div>
-    <p class="muted" style="margin-top: 4px;">92 games today, mostly on ESPN+. <a href="https://www.espn.com/college-baseball/schedule" target="_blank">Full schedule on ESPN</a></p>
+    <div class="sport-league"><a href="https://www.espn.com/college-baseball/schedule" target="_blank">College Baseball</a> &mdash; 90 games</div>
+    <p class="muted" style="margin-top: 4px;">90 games, mostly on ESPN+. <a href="https://www.espn.com/college-baseball/schedule" target="_blank">Full schedule on ESPN</a></p>
+      </div>
+    </details></div>
+<div class="day-panel" id="day-1" style="display: none;"><div class="day-header">Mon, Mar 9 &mdash; 77 games</div>    <div class="sport-league"><a href="https://www.espn.com/nba/schedule" target="_blank">NBA</a> &mdash; 5 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810786/76ers-cavaliers" target="_blank">Philadelphia 76ers at Cleveland Cavaliers</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN OH</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810787/grizzlies-nets" target="_blank">Memphis Grizzlies at Brooklyn Nets</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">YES</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810788/nuggets-thunder" target="_blank">Denver Nuggets at Oklahoma City Thunder</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">NBCSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810789/warriors-jazz" target="_blank">Golden State Warriors at Utah Jazz</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">NBC Sports BA</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810790/knicks-clippers" target="_blank">New York Knicks at LA Clippers</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">NBCSN</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/nhl/schedule" target="_blank">NHL</a> &mdash; 5 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401857755/kings-blue-jackets" target="_blank">Los Angeles Kings at Columbus Blue Jackets</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN West</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803359/rangers-flyers" target="_blank">New York Rangers at Philadelphia Flyers</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">MSGSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803360/flames-capitals" target="_blank">Calgary Flames at Washington Capitals</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">MNMT</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803361/mammoth-blackhawks" target="_blank">Utah Mammoth at Chicago Blackhawks</a></td><td>5:30 PM</td><td><span class="tv-badge tv-yes">Utah 16</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803362/senators-canucks" target="_blank">Ottawa Senators at Vancouver Canucks</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/mlb/schedule" target="_blank">MLB</a> &mdash; 14 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833120/twins-braves" target="_blank">Minnesota Twins at Atlanta Braves</a></td><td>10:05 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833121/phillies-red-sox" target="_blank">Philadelphia Phillies at Boston Red Sox</a></td><td>10:05 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833124/rays-tigers" target="_blank">Tampa Bay Rays at Detroit Tigers</a></td><td>10:05 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833125/cardinals-astros" target="_blank">St. Louis Cardinals at Houston Astros</a></td><td>10:05 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833132/orioles-cardinals" target="_blank">Baltimore Orioles at St. Louis Cardinals</a></td><td>10:05 AM</td><td><span class="tv-badge tv-yes">MLB Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833122/rockies-white-sox" target="_blank">Colorado Rockies at Chicago White Sox</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">MLB.TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833123/athletics-reds" target="_blank">Athletics Athletics at Cincinnati Reds</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833126/guardians-royals" target="_blank">Cleveland Guardians at Kansas City Royals</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833131/angels-giants" target="_blank">Los Angeles Angels at San Francisco Giants</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833119/mariners-diamondbacks" target="_blank">Seattle Mariners at Arizona Diamondbacks</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833127/dodgers-brewers" target="_blank">Los Angeles Dodgers at Milwaukee Brewers</a></td><td>1:10 PM</td><td><span class="tv-badge tv-yes">MLB Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833130/rangers-padres" target="_blank">Texas Rangers at San Diego Padres</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">MLB.TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833128/marlins-mets" target="_blank">Miami Marlins at New York Mets</a></td><td>3:10 PM</td><td><span class="tv-badge tv-yes">MLB Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833129/pirates-yankees" target="_blank">Pittsburgh Pirates at New York Yankees</a></td><td>3:35 PM</td><td><span class="tv-badge tv-no">MLB.TV</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/mens-college-basketball/schedule" target="_blank">NCAA Men's Basketball</a> &mdash; 14 games (8 televised)</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401856431/campbell-monmouth" target="_blank">Campbell Fighting Camels @ Monmouth Hawks</a></td><td>3:00 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851706/tbd-troy" target="_blank">TBD @ Troy Trojans</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851593/furman-etsu" target="_blank">Furman Paladins @ East Tennessee State Buccaneers</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851432/n-kentucky-wright-st" target="_blank">Northern Kentucky Norse @ Wright State Raiders</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401856432/towson-tbd" target="_blank">Towson Tigers @ TBD</a></td><td>5:30 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851759/tbd-gonzaga" target="_blank">TBD @ Gonzaga Bulldogs</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851433/detroit-mercy-robert-morris" target="_blank">Detroit Mercy Titans @ Robert Morris Colonials</a></td><td>6:30 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851760/tbd-saint-marys" target="_blank">TBD @ Saint Mary's Gaels</a></td><td>8:30 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 4px;">
+      <summary style="font-size: 13px; padding: 8px 14px; color: #888;">+ 6 more games (ESPN+ / streaming only)</summary>
+      <div class="section-content">
+        <table>
+          <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851714/alcorn-st-alabama-st" target="_blank">Alcorn State Braves @ Alabama State Hornets</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851607/new-orleans-texas-am-cc" target="_blank">New Orleans Privateers @ Texas A&amp;M-Corpus Christi Islanders</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851332/n-colorado-montana" target="_blank">Northern Colorado Bears @ Montana Grizzlies</a></td><td>4:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851715/miss-valley-st-grambling" target="_blank">Mississippi Valley State Delta Devils @ Grambling Tigers</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851608/tbd-ut-rio-grande" target="_blank">TBD @ UT Rio Grande Valley Vaqueros</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851333/weber-st-e-washington" target="_blank">Weber State Wildcats @ Eastern Washington Eagles</a></td><td>7:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        </table>
       </div>
     </details>
+    <div class="sport-league"><a href="https://www.espn.com/womens-college-basketball/schedule" target="_blank">NCAA Women's Basketball</a> &mdash; 26 games (3 televised)</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851761/james-madison-troy" target="_blank">James Madison Dukes @ Troy Trojans</a></td><td>11:00 AM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851244/austin-peay-jacksonville" target="_blank">Austin Peay Governors @ Jacksonville Dolphins</a></td><td>2:00 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851330/villanova-uconn" target="_blank">Villanova Wildcats @ UConn Huskies</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 4px;">
+      <summary style="font-size: 13px; padding: 8px 14px; color: #888;">+ 23 more games (ESPN+ / streaming only)</summary>
+      <div class="section-content">
+        <table>
+          <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851763/bethune-texas-southern" target="_blank">Bethune-Cookman Wildcats @ Texas Southern Tigers</a></td><td>8:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851707/e-texas-am-nwestern-st" target="_blank">East Texas A&amp;M Lions @ Northwestern State Lady Demons</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851445/purdue-fw-green-bay" target="_blank">Purdue Fort Wayne Mastodons @ Green Bay Phoenix</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851341/sacramento-st-idaho-st" target="_blank">Sacramento State Hornets @ Idaho State Bengals</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851708/nicholls-incarnate-word" target="_blank">Nicholls Colonels @ Incarnate Word Cardinals</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851446/cleveland-st-youngstown-st" target="_blank">Cleveland State Vikings @ Youngstown State Penguins</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851828/oregon-st-lmu" target="_blank">Oregon State Beavers @ Loyola Marymount Lions</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851342/e-washington-n-colorado" target="_blank">Eastern Washington Eagles @ Northern Colorado Bears</a></td><td>1:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851829/santa-clara-gonzaga" target="_blank">Santa Clara Broncos @ Gonzaga Bulldogs</a></td><td>2:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851764/prairie-view-miss-valley-st" target="_blank">Prairie View A&amp;M Lady Panthers @ Mississippi Valley State Devilettes</a></td><td>2:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851470/fairfield-quinnipiac" target="_blank">Fairfield Stags @ Quinnipiac Bobcats</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851592/colgate-holy-cross" target="_blank">Colgate Raiders @ Holy Cross Crusaders</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851590/lafayette-army" target="_blank">Lafayette Leopards @ Army Black Knights</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851588/loyola-md-lehigh" target="_blank">Loyola Maryland Greyhounds @ Lehigh Mountain Hawks</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851553/stonehill-mercyhurst" target="_blank">Stonehill Skyhawks @ Mercyhurst Lakers</a></td><td>3:00 PM</td><td><span class="tv-badge tv-yes">NEC Front Row</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851210/binghamton-maine" target="_blank">Binghamton Bearcats @ Maine Black Bears</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851209/umbc-vermont" target="_blank">UMBC Retrievers @ Vermont Catamounts</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851587/boston-u-navy" target="_blank">Boston University Terriers @ Navy Midshipmen</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851552/chicago-st-long-island" target="_blank">Chicago State Cougars @ Long Island University Sharks</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">NEC Front Row</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851551/le-moyne-wagner" target="_blank">Le Moyne Dolphins @ Wagner Seahawks</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">NEC Front Row</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851550/saint-francis-fdu" target="_blank">Saint Francis Red Flash @ Fairleigh Dickinson Knights</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">NEC Front Row</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851538/air-force-boise-st" target="_blank">Air Force Falcons @ Boise State Broncos</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">MWN</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851539/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>7:30 PM</td><td><span class="tv-badge tv-yes">MWN</span></td></tr>
+        </table>
+      </div>
+    </details>
+    <div class="sport-league"><a href="https://www.espn.com/tennis/schedule" target="_blank">ATP Tennis</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/411-2026/competitionType/2" target="_blank">BNP Paribas Open</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/tennis/schedule" target="_blank">WTA Tennis</a> &mdash; 3 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/411-2026/competitionType/2" target="_blank">BNP Paribas Open</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/1013-2026/competitionType/2" target="_blank">Megasaray Hotels Open 3</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/1063-2026/competitionType/2" target="_blank">Austin 125 2</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/esp.1" target="_blank">La Liga</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/748412/real-oviedo-espanyol" target="_blank">Real Oviedo at Espanyol</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">ESPN Deportes</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/ita.1" target="_blank">Serie A</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/737056/sassuolo-lazio" target="_blank">Sassuolo at Lazio</a></td><td>12:45 PM</td><td><span class="tv-badge tv-no">Paramount+</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 8px;">
+      <summary style="font-size: 13px; padding: 10px 14px; color: #888;">Other Sports <span class="section-badge">PGA Tour (2) &middot; College Baseball (5)</span></summary>
+      <div class="section-content">
+    <div class="sport-league"><a href="https://www.espn.com/golf/schedule" target="_blank">PGA Tour</a> &mdash; 2 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/golf/leaderboard?tournamentId=401811935" target="_blank">Arnold Palmer Invitational pres. by Mastercard</a></td><td>9:00 PM</td><td><span class="tv-badge tv-yes">ESPN+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/golf/leaderboard?tournamentId=401811936" target="_blank">Puerto Rico Open</a></td><td>9:00 PM</td><td><span class="tv-badge tv-yes">Golf Chnl</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/college-baseball/schedule" target="_blank">College Baseball</a> &mdash; 5 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td>Stetson Hatters at Arkansas Razorbacks</td><td>10:00 AM</td><td><span class="tv-badge tv-no">SECN+</span></td></tr>
+      <tr><td>Grand Canyon Lopes at Utah Utes</td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+      <tr><td>South Florida Bulls at Jacksonville Dolphins</td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+      <tr><td>Pepperdine Waves at Cal State Northridge Matadors</td><td>5:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+      <tr><td>Xavier Musketeers at Oregon State Beavers</td><td>5:35 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+      </div>
+    </details></div>
+<div class="day-panel" id="day-2" style="display: none;"><div class="day-header">Tue, Mar 10 &mdash; 163 games</div>    <div class="sport-league"><a href="https://www.espn.com/nba/schedule" target="_blank">NBA</a> &mdash; 11 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810791/grizzlies-76ers" target="_blank">Memphis Grizzlies at Philadelphia 76ers</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN SE</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810792/pistons-nets" target="_blank">Detroit Pistons at Brooklyn Nets</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">YES</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810793/wizards-heat" target="_blank">Washington Wizards at Miami Heat</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">FanDuel SN Sun</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810794/mavericks-hawks" target="_blank">Dallas Mavericks at Atlanta Hawks</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">KFAA-TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810795/raptors-rockets" target="_blank">Toronto Raptors at Houston Rockets</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">Space City Home Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810796/suns-bucks" target="_blank">Phoenix Suns at Milwaukee Bucks</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN WI</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810797/celtics-spurs" target="_blank">Boston Celtics at San Antonio Spurs</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">NBC</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810798/bulls-warriors" target="_blank">Chicago Bulls at Golden State Warriors</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">CHSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810799/hornets-trail-blazers" target="_blank">Charlotte Hornets at Portland Trail Blazers</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">KUNP 16</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810800/pacers-kings" target="_blank">Indiana Pacers at Sacramento Kings</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN IN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810801/timberwolves-lakers" target="_blank">Minnesota Timberwolves at Los Angeles Lakers</a></td><td>8:00 PM</td><td><span class="tv-badge tv-yes">NBC</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/nhl/schedule" target="_blank">NHL</a> &mdash; 13 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803363/kings-bruins" target="_blank">Los Angeles Kings at Boston Bruins</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN West</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803364/sharks-sabres" target="_blank">San Jose Sharks at Buffalo Sabres</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">NBC Sports BA</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803365/maple-leafs-canadiens" target="_blank">Toronto Maple Leafs at Montreal Canadiens</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803366/blue-jackets-lightning" target="_blank">Columbus Blue Jackets at Tampa Bay Lightning</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN OH</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803367/red-wings-panthers" target="_blank">Detroit Red Wings at Florida Panthers</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN DET</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803368/flames-rangers" target="_blank">Calgary Flames at New York Rangers</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">MSG</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803369/penguins-hurricanes" target="_blank">Pittsburgh Penguins at Carolina Hurricanes</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN South</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803370/islanders-blues" target="_blank">New York Islanders at St. Louis Blues</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">TNT</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803371/golden-knights-stars" target="_blank">Vegas Golden Knights at Dallas Stars</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">Fox4</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803372/mammoth-wild" target="_blank">Utah Mammoth at Minnesota Wild</a></td><td>5:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803373/ducks-jets" target="_blank">Anaheim Ducks at Winnipeg Jets</a></td><td>5:30 PM</td><td><span class="tv-badge tv-yes">KCOP</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803374/oilers-avalanche" target="_blank">Edmonton Oilers at Colorado Avalanche</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">TNT</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803375/predators-kraken" target="_blank">Nashville Predators at Seattle Kraken</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN South</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/mlb/schedule" target="_blank">MLB</a> &mdash; 14 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833134/tigers-red-sox" target="_blank">Detroit Tigers at Boston Red Sox</a></td><td>10:05 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833137/orioles-astros" target="_blank">Baltimore Orioles at Houston Astros</a></td><td>10:05 AM</td><td><span class="tv-badge tv-yes">MASN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833142/yankees-phillies" target="_blank">New York Yankees at Philadelphia Phillies</a></td><td>10:05 AM</td><td><span class="tv-badge tv-yes">NBC Sports Phil +</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833144/twins-rays" target="_blank">Minnesota Twins at Tampa Bay Rays</a></td><td>10:05 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833146/braves-blue-jays" target="_blank">Atlanta Braves at Toronto Blue Jays</a></td><td>10:07 AM</td><td><span class="tv-badge tv-yes">MLB Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833140/nationals-marlins" target="_blank">Washington Nationals at Miami Marlins</a></td><td>10:10 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833141/cardinals-mets" target="_blank">St. Louis Cardinals at New York Mets</a></td><td>10:10 AM</td><td><span class="tv-badge tv-yes">SNY</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833133/white-sox-athletics" target="_blank">Chicago White Sox at Athletics Athletics</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833135/giants-guardians" target="_blank">San Francisco Giants at Cleveland Guardians</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833139/diamondbacks-dodgers" target="_blank">Arizona Diamondbacks at Los Angeles Dodgers</a></td><td>1:05 PM</td><td><span class="tv-badge tv-yes">Sportsnet LA</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833145/cubs-rangers" target="_blank">Chicago Cubs at Texas Rangers</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833136/reds-rockies" target="_blank">Cincinnati Reds at Colorado Rockies</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833138/padres-angels" target="_blank">San Diego Padres at Los Angeles Angels</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833143/royals-mariners" target="_blank">Kansas City Royals at Seattle Mariners</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/mens-college-basketball/schedule" target="_blank">NCAA Men's Basketball</a> &mdash; 24 games (13 televised)</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851170/pitt-stanford" target="_blank">Pittsburgh Panthers @ Stanford Cardinal</a></td><td>11:00 AM</td><td><span class="tv-badge tv-yes">ACC Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851171/syracuse-smu" target="_blank">Syracuse Orange @ SMU Mustangs</a></td><td>1:30 PM</td><td><span class="tv-badge tv-yes">ACC Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851362/maryland-oregon" target="_blank">Maryland Terrapins @ Oregon Ducks</a></td><td>2:00 PM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401856433/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851611/tbd-sf-austin" target="_blank">TBD @ Stephen F. Austin Lumberjacks</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851521/mercyhurst-long-island" target="_blank">Mercyhurst Lakers @ Long Island University Sharks</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851434/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851172/wake-forest-virginia-tech" target="_blank">Wake Forest Demon Deacons @ Virginia Tech Hokies</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">ACC Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851363/penn-state-northwestern" target="_blank">Penn State Nittany Lions @ Northwestern Wildcats</a></td><td>4:30 PM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851762/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851467/tbd-merrimack" target="_blank">TBD @ Merrimack Warriors</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851334/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851335/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>8:30 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 4px;">
+      <summary style="font-size: 13px; padding: 8px 14px; color: #888;">+ 11 more games (ESPN+ / streaming only)</summary>
+      <div class="section-content">
+        <table>
+          <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851282/baylor-arizona-st" target="_blank">Baylor Bears @ Arizona State Sun Devils</a></td><td>9:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851716/tbd-prairie-view" target="_blank">TBD @ Prairie View A&amp;M Panthers</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851283/utah-cincinnati" target="_blank">Utah Utes @ Cincinnati Bearcats</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851202/umass-lowell-umbc" target="_blank">UMass Lowell River Hawks @ UMBC Retrievers</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851405/missouri-st-fiu" target="_blank">Missouri State Bears @ Florida International Panthers</a></td><td>3:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851285/kansas-st-byu" target="_blank">Kansas State Wildcats @ BYU Cougars</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851204/njit-vermont" target="_blank">NJIT Highlanders @ Vermont Catamounts</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851717/tbd-jackson-st" target="_blank">TBD @ Jackson State Tigers</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851406/new-mexico-st-jax-state" target="_blank">New Mexico State Aggies @ Jacksonville State Gamecocks</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851612/tbd-mcneese" target="_blank">TBD @ McNeese Cowboys</a></td><td>6:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851287/oklahoma-st-colorado" target="_blank">Oklahoma State Cowboys @ Colorado Buffaloes</a></td><td>6:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        </table>
+      </div>
+    </details>
+    <div class="sport-league"><a href="https://www.espn.com/womens-college-basketball/schedule" target="_blank">NCAA Women's Basketball</a> &mdash; 13 games (3 televised)</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851447/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>9:00 AM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851830/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851540/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>6:30 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 4px;">
+      <summary style="font-size: 13px; padding: 8px 14px; color: #888;">+ 10 more games (ESPN+ / streaming only)</summary>
+      <div class="section-content">
+        <table>
+          <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851765/tbd-florida-am" target="_blank">TBD @ Florida A&amp;M Rattlers</a></td><td>8:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851709/tbd-ut-rio-grande" target="_blank">TBD @ UT Rio Grande Valley Vaqueros</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851416/kennesaw-st-delaware" target="_blank">Kennesaw State Owls @ Delaware Blue Hens</a></td><td>9:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851212/fau-charlotte" target="_blank">Florida Atlantic Owls @ Charlotte 49ers</a></td><td>10:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851343/tbd-idaho" target="_blank">TBD @ Idaho Vandals</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851710/tbd-sf-austin" target="_blank">TBD @ Stephen F. Austin Ladyjacks</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851417/utep-jax-state" target="_blank">UTEP Miners @ Jacksonville State Gamecocks</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851213/tulane-temple" target="_blank">Tulane Green Wave @ Temple Owls</a></td><td>12:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851344/tbd-montana-st" target="_blank">TBD @ Montana State Bobcats</a></td><td>1:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851766/tbd-ar-pine-bluff" target="_blank">TBD @ Arkansas-Pine Bluff Golden Lions</a></td><td>2:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        </table>
+      </div>
+    </details>
+    <div class="sport-league"><a href="https://www.espn.com/tennis/schedule" target="_blank">ATP Tennis</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/411-2026/competitionType/2" target="_blank">BNP Paribas Open</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/tennis/schedule" target="_blank">WTA Tennis</a> &mdash; 3 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/411-2026/competitionType/2" target="_blank">BNP Paribas Open</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/1013-2026/competitionType/2" target="_blank">Megasaray Hotels Open 3</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/1063-2026/competitionType/2" target="_blank">Austin 125 2</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/uefa.champions" target="_blank">Champions League</a> &mdash; 4 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401862667/liverpool-galatasaray" target="_blank">Liverpool at Galatasaray</a></td><td>10:45 AM</td><td><span class="tv-badge tv-no">Paramount+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401862641/bayern-munich-atalanta" target="_blank">Bayern Munich at Atalanta</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401862579/tottenham-hotspur-atletico-madrid" target="_blank">Tottenham Hotspur at Atlético Madrid</a></td><td>1:00 PM</td><td><span class="tv-badge tv-no">Paramount+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401862577/barcelona-newcastle-united" target="_blank">Barcelona at Newcastle United</a></td><td>1:00 PM</td><td><span class="tv-badge tv-no">Paramount+</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 8px;">
+      <summary style="font-size: 13px; padding: 10px 14px; color: #888;">Other Sports <span class="section-badge">College Baseball (80)</span></summary>
+      <div class="section-content">
+    <div class="sport-league"><a href="https://www.espn.com/college-baseball/schedule" target="_blank">College Baseball</a> &mdash; 80 games</div>
+    <p class="muted" style="margin-top: 4px;">80 games, mostly on ESPN+. <a href="https://www.espn.com/college-baseball/schedule" target="_blank">Full schedule on ESPN</a></p>
+      </div>
+    </details></div>
+<div class="day-panel" id="day-3" style="display: none;"><div class="day-header">Wed, Mar 11 &mdash; 114 games</div>    <div class="sport-league"><a href="https://www.espn.com/nba/schedule" target="_blank">NBA</a> &mdash; 6 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810802/cavaliers-magic" target="_blank">Cleveland Cavaliers at Orlando Magic</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810803/raptors-pelicans" target="_blank">Toronto Raptors at New Orleans Pelicans</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">Sportsnet</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810804/knicks-jazz" target="_blank">New York Knicks at Utah Jazz</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">KJZZ-TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810805/rockets-nuggets" target="_blank">Houston Rockets at Denver Nuggets</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810806/hornets-kings" target="_blank">Charlotte Hornets at Sacramento Kings</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN SE</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810807/timberwolves-clippers" target="_blank">Minnesota Timberwolves at LA Clippers</a></td><td>7:30 PM</td><td><span class="tv-badge tv-yes">FanDuel SN North</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/nhl/schedule" target="_blank">NHL</a> &mdash; 2 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803376/canadiens-senators" target="_blank">Montreal Canadiens at Ottawa Senators</a></td><td>4:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803377/capitals-flyers" target="_blank">Washington Capitals at Philadelphia Flyers</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">TNT</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/mlb/schedule" target="_blank">MLB</a> &mdash; 12 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833148/rays-braves" target="_blank">Tampa Bay Rays at Atlanta Braves</a></td><td>10:05 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833149/pirates-orioles" target="_blank">Pittsburgh Pirates at Baltimore Orioles</a></td><td>10:05 AM</td><td><span class="tv-badge tv-yes">MASN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833155/tigers-twins" target="_blank">Detroit Tigers at Minnesota Twins</a></td><td>10:05 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833158/cardinals-nationals" target="_blank">St. Louis Cardinals at Washington Nationals</a></td><td>10:05 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833154/astros-marlins" target="_blank">Houston Astros at Miami Marlins</a></td><td>10:10 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833150/royals-cubs" target="_blank">Kansas City Royals at Chicago Cubs</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833151/angels-white-sox" target="_blank">Los Angeles Angels at Chicago White Sox</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833152/brewers-reds" target="_blank">Milwaukee Brewers at Cincinnati Reds</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833153/giants-royals" target="_blank">San Francisco Giants at Kansas City Royals</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833147/athletics-diamondbacks" target="_blank">Athletics Athletics at Arizona Diamondbacks</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833157/rockies-mariners" target="_blank">Colorado Rockies at Seattle Mariners</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833156/blue-jays-yankees" target="_blank">Toronto Blue Jays at New York Yankees</a></td><td>3:35 PM</td><td><span class="tv-badge tv-yes">MLB Net</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/mens-college-basketball/schedule" target="_blank">NCAA Men's Basketball</a> &mdash; 38 games (20 televised)</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851258/st-bonaventure-la-salle" target="_blank">St. Bonaventure Bonnies @ La Salle Explorers</a></td><td>8:30 AM</td><td><span class="tv-badge tv-yes">USA Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851365/tbd-iowa" target="_blank">TBD @ Iowa Hawkeyes</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851557/lsu-kentucky" target="_blank">LSU Tigers @ Kentucky Wildcats</a></td><td>9:30 AM</td><td><span class="tv-badge tv-yes">SEC Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851260/loyola-chicago-richmond" target="_blank">Loyola Chicago Ramblers @ Richmond Spiders</a></td><td>11:00 AM</td><td><span class="tv-badge tv-yes">USA Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851367/usc-washington" target="_blank">USC Trojans @ Washington Huskies</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851174/tbd-louisville" target="_blank">TBD @ Louisville Cardinals</a></td><td>11:30 AM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851558/mississippi-st-auburn" target="_blank">Mississippi State Bulldogs @ Auburn Tigers</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">SEC Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851291/tbd-ucf" target="_blank">TBD @ UCF Knights</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851308/providence-butler" target="_blank">Providence Friars @ Butler Bulldogs</a></td><td>1:00 PM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851614/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>2:00 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851369/tbd-indiana" target="_blank">TBD @ Indiana Hoosiers</a></td><td>3:30 PM</td><td><span class="tv-badge tv-yes">BTN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851309/xavier-marquette" target="_blank">Xavier Musketeers @ Marquette Golden Eagles</a></td><td>3:30 PM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851559/ole-miss-texas" target="_blank">Ole Miss Rebels @ Texas Longhorns</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">SEC Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851549/boston-u-lehigh" target="_blank">Boston University Terriers @ Lehigh Mountain Hawks</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851293/tbd-west-virginia" target="_blank">TBD @ West Virginia Mountaineers</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851175/california-florida-st" target="_blank">California Golden Bears @ Florida State Seminoles</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851370/rutgers-minnesota" target="_blank">Rutgers Scarlet Knights @ Minnesota Golden Gophers</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">BTN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851310/georgetown-depaul" target="_blank">Georgetown Hoyas @ DePaul Blue Demons</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851560/south-carolina-oklahoma" target="_blank">South Carolina Gamecocks @ Oklahoma Sooners</a></td><td>6:30 PM</td><td><span class="tv-badge tv-yes">SEC Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851336/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>8:30 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 4px;">
+      <summary style="font-size: 13px; padding: 8px 14px; color: #888;">+ 18 more games (ESPN+ / streaming only)</summary>
+      <div class="section-content">
+        <table>
+          <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851173/tbd-nc-state" target="_blank">TBD @ NC State Wolfpack</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851289/tbd-iowa-state" target="_blank">TBD @ Iowa State Cyclones</a></td><td>9:30 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851718/tbd-bethune" target="_blank">TBD @ Bethune-Cookman Wildcats</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851495/wyoming-unlv" target="_blank">Wyoming Cowboys @ UNLV Rebels</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">MWN</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851496/air-force-nevada" target="_blank">Air Force Falcons @ Nevada Wolf Pack</a></td><td>2:30 PM</td><td><span class="tv-badge tv-yes">MWN</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851472/delaware-st-morgan-st" target="_blank">Delaware State Hornets @ Morgan State Bears</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851407/tbd-liberty" target="_blank">TBD @ Liberty Flames</a></td><td>3:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851221/tulane-memphis" target="_blank">Tulane Green Wave @ Memphis Tigers</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">ESPNEWS</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851733/tarleton-st-abilene-chrstn" target="_blank">Tarleton State Texans @ Abilene Christian Wildcats</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851721/tbd-florida-am" target="_blank">TBD @ Florida A&amp;M Rattlers</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851497/fresno-st-colorado-st" target="_blank">Fresno State Bulldogs @ Colorado State Rams</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">MWN</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851408/tbd-sam-houston" target="_blank">TBD @ Sam Houston Bearkats</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851391/cal-poly-uc-san-diego" target="_blank">Cal Poly Mustangs @ UC San Diego Tritons</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851222/temple-fau" target="_blank">Temple Owls @ Florida Atlantic Owls</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851294/tbd-tcu" target="_blank">TBD @ TCU Horned Frogs</a></td><td>6:30 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851176/tbd-clemson" target="_blank">TBD @ Clemson Tigers</a></td><td>6:30 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851498/san-jose-st-boise-st" target="_blank">San José State Spartans @ Boise State Broncos</a></td><td>8:30 PM</td><td><span class="tv-badge tv-yes">MWN</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851392/santa-barbara-uc-davis" target="_blank">UC Santa Barbara Gauchos @ UC Davis Aggies</a></td><td>8:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        </table>
+      </div>
+    </details>
+    <div class="sport-league"><a href="https://www.espn.com/womens-college-basketball/schedule" target="_blank">NCAA Women's Basketball</a> &mdash; 19 games (1 televised)</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851345/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>2:00 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 4px;">
+      <summary style="font-size: 13px; padding: 8px 14px; color: #888;">+ 18 more games (ESPN+ / streaming only)</summary>
+      <div class="section-content">
+        <table>
+          <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856460/kent-state-miami-oh" target="_blank">Kent State Golden Flashes @ Miami (OH) RedHawks</a></td><td>8:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851767/tbd-alabama-am" target="_blank">TBD @ Alabama A&amp;M Bulldogs</a></td><td>8:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851711/tbd-mcneese" target="_blank">TBD @ McNeese Cowgirls</a></td><td>8:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851478/sc-state-howard" target="_blank">South Carolina State Lady Bulldogs @ Howard Bison</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851418/tbd-louisiana-tech" target="_blank">TBD @ Louisiana Tech Lady Techsters</a></td><td>9:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851214/tbd-north-texas" target="_blank">TBD @ North Texas Mean Green</a></td><td>10:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856461/ohio-c-michigan" target="_blank">Ohio Bobcats @ Central Michigan Chippewas</a></td><td>10:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856448/unc-wilmington-northeastern" target="_blank">UNC Wilmington Seahawks @ Northeastern Huskies</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851712/tbd-lamar" target="_blank">TBD @ Lamar Cardinals</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851479/delaware-st-md-eastern" target="_blank">Delaware State Hornets @ Maryland Eastern Shore Hawks</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851419/tbd-fiu" target="_blank">TBD @ Florida International Panthers</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851400/csu-northridge-fullerton" target="_blank">Cal State Northridge Matadors @ Cal State Fullerton Titans</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851215/tbd-utsa" target="_blank">TBD @ UTSA Roadrunners</a></td><td>12:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856462/bowling-green-ball-state" target="_blank">Bowling Green Falcons @ Ball State Cardinals</a></td><td>1:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851770/tbd-alcorn-st" target="_blank">TBD @ Alcorn State Lady Braves</a></td><td>2:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851401/uc-riverside-santa-barbara" target="_blank">UC Riverside Highlanders @ UC Santa Barbara Gauchos</a></td><td>2:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851774/utah-tech-ut-arlington" target="_blank">Utah Tech Trailblazers @ UT Arlington Mavericks</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856463/toledo-umass" target="_blank">Toledo Rockets @ Massachusetts Minutewomen</a></td><td>3:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        </table>
+      </div>
+    </details>
+    <div class="sport-league"><a href="https://www.espn.com/tennis/schedule" target="_blank">ATP Tennis</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/411-2026/competitionType/2" target="_blank">BNP Paribas Open</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/tennis/schedule" target="_blank">WTA Tennis</a> &mdash; 3 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/411-2026/competitionType/2" target="_blank">BNP Paribas Open</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/1013-2026/competitionType/2" target="_blank">Megasaray Hotels Open 3</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/1063-2026/competitionType/2" target="_blank">Austin 125 2</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/uefa.champions" target="_blank">Champions League</a> &mdash; 4 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401862578/arsenal-bayer-leverkusen" target="_blank">Arsenal at Bayer Leverkusen</a></td><td>10:45 AM</td><td><span class="tv-badge tv-no">Paramount+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401862583/sporting-cp-bodoglimt" target="_blank">Sporting CP at Bodo/Glimt</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401862646/chelsea-paris-saint-germain" target="_blank">Chelsea at Paris Saint-Germain</a></td><td>1:00 PM</td><td><span class="tv-badge tv-no">Paramount+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401862645/manchester-city-real-madrid" target="_blank">Manchester City at Real Madrid</a></td><td>1:00 PM</td><td><span class="tv-badge tv-no">Paramount+</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 8px;">
+      <summary style="font-size: 13px; padding: 10px 14px; color: #888;">Other Sports <span class="section-badge">College Baseball (29)</span></summary>
+      <div class="section-content">
+    <div class="sport-league"><a href="https://www.espn.com/college-baseball/schedule" target="_blank">College Baseball</a> &mdash; 29 games</div>
+    <p class="muted" style="margin-top: 4px;">29 games, mostly on ESPN+. <a href="https://www.espn.com/college-baseball/schedule" target="_blank">Full schedule on ESPN</a></p>
+      </div>
+    </details></div>
+<div class="day-panel" id="day-4" style="display: none;"><div class="day-header">Thu, Mar 12 &mdash; 113 games</div>    <div class="sport-league"><a href="https://www.espn.com/nba/schedule" target="_blank">NBA</a> &mdash; 9 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810808/76ers-pistons" target="_blank">Philadelphia 76ers at Detroit Pistons</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">Prime Video</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810809/suns-pacers" target="_blank">Phoenix Suns at Indiana Pacers</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN IN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810810/wizards-magic" target="_blank">Washington Wizards at Orlando Magic</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">MNMT</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810811/nets-hawks" target="_blank">Brooklyn Nets at Atlanta Hawks</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">YES</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810812/bucks-heat" target="_blank">Milwaukee Bucks at Miami Heat</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">FanDuel SN Sun</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810966/mavericks-grizzlies" target="_blank">Dallas Mavericks at Memphis Grizzlies</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN SE</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810813/nuggets-spurs" target="_blank">Denver Nuggets at San Antonio Spurs</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">Altitude Sports</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810814/celtics-thunder" target="_blank">Boston Celtics at Oklahoma City Thunder</a></td><td>6:30 PM</td><td><span class="tv-badge tv-yes">NBC Sports BO</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810815/bulls-lakers" target="_blank">Chicago Bulls at Los Angeles Lakers</a></td><td>7:30 PM</td><td><span class="tv-badge tv-yes">Spectrum Sports Net</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/nhl/schedule" target="_blank">NHL</a> &mdash; 14 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803378/sharks-bruins" target="_blank">San Jose Sharks at Boston Bruins</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">NBC Sports BA</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803379/capitals-sabres" target="_blank">Washington Capitals at Buffalo Sabres</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">MNMT</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803380/ducks-maple-leafs" target="_blank">Anaheim Ducks at Toronto Maple Leafs</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">KCOP</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803381/red-wings-lightning" target="_blank">Detroit Red Wings at Tampa Bay Lightning</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN DET</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803382/blue-jackets-panthers" target="_blank">Columbus Blue Jackets at Florida Panthers</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN OH</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803383/flames-devils" target="_blank">Calgary Flames at New Jersey Devils</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">MSGSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803384/blues-hurricanes" target="_blank">St. Louis Blues at Carolina Hurricanes</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN MW</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803385/oilers-stars" target="_blank">Edmonton Oilers at Dallas Stars</a></td><td>5:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803386/flyers-wild" target="_blank">Philadelphia Flyers at Minnesota Wild</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">NBC Sports Phil</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803387/rangers-jets" target="_blank">New York Rangers at Winnipeg Jets</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">MSG</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803388/blackhawks-mammoth" target="_blank">Chicago Blackhawks at Utah Mammoth</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">Utah 16</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803389/predators-canucks" target="_blank">Nashville Predators at Vancouver Canucks</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN South</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803390/penguins-golden-knights" target="_blank">Pittsburgh Penguins at Vegas Golden Knights</a></td><td>7:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803391/avalanche-kraken" target="_blank">Colorado Avalanche at Seattle Kraken</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">Altitude 2 Sports</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/mlb/schedule" target="_blank">MLB</a> &mdash; 13 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833162/yankees-tigers" target="_blank">New York Yankees at Detroit Tigers</a></td><td>10:05 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833165/red-sox-twins" target="_blank">Boston Red Sox at Minnesota Twins</a></td><td>10:05 AM</td><td><span class="tv-badge tv-yes">MLB Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833166/blue-jays-phillies" target="_blank">Toronto Blue Jays at Philadelphia Phillies</a></td><td>10:05 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833170/mets-cardinals" target="_blank">New York Mets at St. Louis Cardinals</a></td><td>10:05 AM</td><td><span class="tv-badge tv-no">MLB.TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833160/mariners-cubs" target="_blank">Seattle Mariners at Chicago Cubs</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833171/athletics-rangers" target="_blank">Athletics Athletics at Texas Rangers</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833159/rockies-diamondbacks" target="_blank">Colorado Rockies at Arizona Diamondbacks</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833163/nationals-astros" target="_blank">Washington Nationals at Houston Astros</a></td><td>3:05 PM</td><td><span class="tv-badge tv-yes">Space City Home Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833167/braves-pirates" target="_blank">Atlanta Braves at Pittsburgh Pirates</a></td><td>3:05 PM</td><td><span class="tv-badge tv-yes">MLBN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833161/brewers-guardians" target="_blank">Milwaukee Brewers at Cleveland Guardians</a></td><td>6:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833164/reds-dodgers" target="_blank">Cincinnati Reds at Los Angeles Dodgers</a></td><td>6:05 PM</td><td><span class="tv-badge tv-yes">Sportsnet LA</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833169/white-sox-giants" target="_blank">Chicago White Sox at San Francisco Giants</a></td><td>6:05 PM</td><td><span class="tv-badge tv-yes">NBC Sports BA</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833168/royals-padres" target="_blank">Kansas City Royals at San Diego Padres</a></td><td>6:10 PM</td><td><span class="tv-badge tv-yes">MLBN</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/mens-college-basketball/schedule" target="_blank">NCAA Men's Basketball</a> &mdash; 44 games (22 televised)</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851263/g-washington-fordham" target="_blank">George Washington Revolutionaries @ Fordham Rams</a></td><td>8:30 AM</td><td><span class="tv-badge tv-yes">USA Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851311/tbd-st-johns" target="_blank">TBD @ St. John's Red Storm</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851375/tbd-ohio-state" target="_blank">TBD @ Ohio State Buckeyes</a></td><td>9:00 AM</td><td><span class="tv-badge tv-yes">BTN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851561/tbd-missouri" target="_blank">TBD @ Missouri Tigers</a></td><td>9:30 AM</td><td><span class="tv-badge tv-yes">SEC Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851264/tbd-george-mason" target="_blank">TBD @ George Mason Patriots</a></td><td>11:00 AM</td><td><span class="tv-badge tv-yes">USA Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851376/tbd-wisconsin" target="_blank">TBD @ Wisconsin Badgers</a></td><td>11:30 AM</td><td><span class="tv-badge tv-yes">BTN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851312/creighton-seton-hall" target="_blank">Creighton Bluejays @ Seton Hall Pirates</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851562/tbd-tennessee" target="_blank">TBD @ Tennessee Volunteers</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">SEC Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851499/tbd-utah-state" target="_blank">TBD @ Utah State Aggies</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851266/rhode-island-duquesne" target="_blank">Rhode Island Rams @ Duquesne Dukes</a></td><td>2:00 PM</td><td><span class="tv-badge tv-yes">USA Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851500/tbd-grand-canyon" target="_blank">TBD @ Grand Canyon Lopes</a></td><td>2:30 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851377/tbd-purdue" target="_blank">TBD @ Purdue Boilermakers</a></td><td>3:30 PM</td><td><span class="tv-badge tv-yes">BTN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851313/tbd-uconn" target="_blank">TBD @ UConn Huskies</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FS1</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851563/tbd-georgia" target="_blank">TBD @ Georgia Bulldogs</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">SEC Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851223/tbd-charlotte" target="_blank">TBD @ Charlotte 49ers</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851268/tbd-davidson" target="_blank">TBD @ Davidson Wildcats</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">USA Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851501/tbd-san-diego-st" target="_blank">TBD @ San Diego State Aztecs</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851378/tbd-ucla" target="_blank">TBD @ UCLA Bruins</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">BTN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851564/tbd-texas-am" target="_blank">TBD @ Texas A&amp;M Aggies</a></td><td>6:30 PM</td><td><span class="tv-badge tv-yes">SEC Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851314/tbd-villanova" target="_blank">TBD @ Villanova Wildcats</a></td><td>6:30 PM</td><td><span class="tv-badge tv-yes">FS1</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851224/tbd-north-texas" target="_blank">TBD @ North Texas Mean Green</a></td><td>6:30 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851502/tbd-new-mexico" target="_blank">TBD @ New Mexico Lobos</a></td><td>8:30 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 4px;">
+      <summary style="font-size: 13px; padding: 8px 14px; color: #888;">+ 22 more games (ESPN+ / streaming only)</summary>
+      <div class="section-content">
+        <table>
+          <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401858186/umass-miami-oh" target="_blank">Massachusetts Minutemen @ Miami (OH) RedHawks</a></td><td>8:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851177/tbd-virginia" target="_blank">TBD @ Virginia Cavaliers</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851296/tbd-texas-tech" target="_blank">TBD @ Texas Tech Red Raiders</a></td><td>9:30 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401858187/bowling-green-toledo" target="_blank">Bowling Green Falcons @ Toledo Rockets</a></td><td>10:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851719/alabama-am-texas-southern" target="_blank">Alabama A&amp;M Bulldogs @ Texas Southern Tigers</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851178/tbd-miami" target="_blank">TBD @ Miami Hurricanes</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851299/tbd-arizona" target="_blank">TBD @ Arizona Wildcats</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401858188/buffalo-akron" target="_blank">Buffalo Bulls @ Akron Zips</a></td><td>1:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851473/sc-state-norfolk-st" target="_blank">South Carolina State Bulldogs @ Norfolk State Spartans</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401858189/ohio-kent-state" target="_blank">Ohio Bobcats @ Kent State Golden Flashes</a></td><td>3:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851410/mtsu-louisiana-tech" target="_blank">Middle Tennessee Blue Raiders @ Louisiana Tech Bulldogs</a></td><td>3:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851179/tbd-duke" target="_blank">TBD @ Duke Blue Devils</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851300/tbd-houston" target="_blank">TBD @ Houston Cougars</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851474/md-eastern-nc-central" target="_blank">Maryland Eastern Shore Hawks @ North Carolina Central Eagles</a></td><td>5:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851720/ar-pine-bluff-southern" target="_blank">Arkansas-Pine Bluff Golden Lions @ Southern Jaguars</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851734/southern-utah-ut-arlington" target="_blank">Southern Utah Thunderbirds @ UT Arlington Mavericks</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851411/kennesaw-st-western-ky" target="_blank">Kennesaw State Owls @ Western Kentucky Hilltoppers</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851393/tbd-csu-northridge" target="_blank">TBD @ Cal State Northridge Matadors</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851302/tbd-kansas" target="_blank">TBD @ Kansas Jayhawks</a></td><td>6:30 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851180/tbd-north-carolina" target="_blank">TBD @ North Carolina Tar Heels</a></td><td>6:30 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851735/tbd-utah-tech" target="_blank">TBD @ Utah Tech Trailblazers</a></td><td>8:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851394/tbd-fullerton" target="_blank">TBD @ Cal State Fullerton Titans</a></td><td>8:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        </table>
+      </div>
+    </details>
+    <div class="sport-league"><a href="https://www.espn.com/womens-college-basketball/schedule" target="_blank">NCAA Women's Basketball</a> &mdash; 24 games (1 televised)</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851713/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>2:00 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 4px;">
+      <summary style="font-size: 13px; padding: 8px 14px; color: #888;">+ 23 more games (ESPN+ / streaming only)</summary>
+      <div class="section-content">
+        <table>
+          <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851595/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851594/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851768/jackson-st-southern" target="_blank">Jackson State Lady Tigers @ Southern Jaguars</a></td><td>8:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856449/nc-at-william-mary" target="_blank">North Carolina A&amp;T Aggies @ William &amp; Mary Tribe</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851480/nc-central-coppin-st" target="_blank">North Carolina Central Eagles @ Coppin State Eagles</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851420/liberty-sam-houston" target="_blank">Liberty Flames @ Sam Houston Bearkats</a></td><td>9:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851216/tbd-tulsa" target="_blank">TBD @ Tulsa Golden Hurricane</a></td><td>10:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851481/morgan-st-norfolk-st" target="_blank">Morgan State Lady Bears @ Norfolk State Spartans</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856450/tbd-monmouth" target="_blank">TBD @ Monmouth Hawks</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851775/tarleton-st-utah-valley" target="_blank">Tarleton State Texans @ Utah Valley Wolverines</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851422/missouri-st-mtsu" target="_blank">Missouri State Bears @ Middle Tennessee Blue Raiders</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851402/tbd-hawai’i" target="_blank">TBD @ Hawai'i Rainbow Wahine</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851217/tbd-south-florida" target="_blank">TBD @ South Florida Bulls</a></td><td>12:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851506/indiana-st-s-illinois" target="_blank">Indiana State Sycamores @ Southern Illinois Salukis</a></td><td>1:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851776/tbd-southern-utah" target="_blank">TBD @ Southern Utah Thunderbirds</a></td><td>2:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851769/grambling-alabama-st" target="_blank">Grambling Lady Tigers @ Alabama State Lady Hornets</a></td><td>2:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851403/tbd-uc-davis" target="_blank">TBD @ UC Davis Aggies</a></td><td>2:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856451/hofstra-towson" target="_blank">Hofstra Pride @ Towson Tigers</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851555/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851554/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851507/evansville-uic" target="_blank">Evansville Purple Aces @ UIC Flames</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856452/hampton-elon" target="_blank">Hampton Lady Pirates @ Elon Phoenix</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851508/valparaiso-drake" target="_blank">Valparaiso Beacons @ Drake Bulldogs</a></td><td>6:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        </table>
+      </div>
+    </details>
+    <div class="sport-league"><a href="https://www.espn.com/tennis/schedule" target="_blank">ATP Tennis</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/411-2026/competitionType/2" target="_blank">BNP Paribas Open</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/tennis/schedule" target="_blank">WTA Tennis</a> &mdash; 3 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/411-2026/competitionType/2" target="_blank">BNP Paribas Open</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/1013-2026/competitionType/2" target="_blank">Megasaray Hotels Open 3</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/1063-2026/competitionType/2" target="_blank">Austin 125 2</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 8px;">
+      <summary style="font-size: 13px; padding: 10px 14px; color: #888;">Other Sports <span class="section-badge">PGA Tour (1) &middot; Formula 1 (1) &middot; College Baseball (3)</span></summary>
+      <div class="section-content">
+    <div class="sport-league"><a href="https://www.espn.com/golf/schedule" target="_blank">PGA Tour</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/golf/leaderboard?tournamentId=401811937" target="_blank">THE PLAYERS Championship</a></td><td>9:00 PM</td><td><span class="tv-badge tv-yes">ESPN+</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/f1/schedule" target="_blank">Formula 1</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/f1/race/_/id/600057428" target="_blank">Heineken Chinese Grand Prix</a></td><td>8:30 PM</td><td><span class="tv-badge tv-no">Apple TV</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/college-baseball/schedule" target="_blank">College Baseball</a> &mdash; 3 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td>Cincinnati Bearcats at BYU Cougars</td><td>2:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+      <tr><td>Georgia Tech Yellow Jackets at Clemson Tigers</td><td>4:00 PM</td><td><span class="tv-badge tv-yes">ACC Network</span></td></tr>
+      <tr><td>Butler Bulldogs at Wichita State Shockers</td><td>4:05 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+    </table>
+      </div>
+    </details></div>
+<div class="day-panel" id="day-5" style="display: none;"><div class="day-header">Fri, Mar 13 &mdash; 177 games</div>    <div class="sport-league"><a href="https://www.espn.com/nba/schedule" target="_blank">NBA</a> &mdash; 8 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810816/grizzlies-pistons" target="_blank">Memphis Grizzlies at Detroit Pistons</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">FanDuel SN DET</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810817/knicks-pacers" target="_blank">New York Knicks at Indiana Pacers</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">MSG</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810818/suns-raptors" target="_blank">Phoenix Suns at Toronto Raptors</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">Arizona's Family 3TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810820/cavaliers-mavericks" target="_blank">Cleveland Cavaliers at Dallas Mavericks</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">FanDuel SN OH</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810819/pelicans-rockets" target="_blank">New Orleans Pelicans at Houston Rockets</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">Space City Home Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810821/timberwolves-warriors" target="_blank">Minnesota Timberwolves at Golden State Warriors</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">NBC Sports BA</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810822/jazz-trail-blazers" target="_blank">Utah Jazz at Portland Trail Blazers</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">KUNP 16</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810823/bulls-clippers" target="_blank">Chicago Bulls at LA Clippers</a></td><td>7:30 PM</td><td><span class="tv-badge tv-yes">CHSN</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/nhl/schedule" target="_blank">NHL</a> &mdash; 2 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803392/kings-islanders" target="_blank">Los Angeles Kings at New York Islanders</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN West</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803393/oilers-blues" target="_blank">Edmonton Oilers at St. Louis Blues</a></td><td>5:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/mlb/schedule" target="_blank">MLB</a> &mdash; 17 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833173/yankees-braves" target="_blank">New York Yankees at Atlanta Braves</a></td><td>10:05 AM</td><td><span class="tv-badge tv-yes">MLBN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833174/rays-red-sox" target="_blank">Tampa Bay Rays at Boston Red Sox</a></td><td>10:05 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833183/orioles-phillies" target="_blank">Baltimore Orioles at Philadelphia Phillies</a></td><td>10:05 AM</td><td><span class="tv-badge tv-yes">NBC Sports Phil +</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833187/twins-blue-jays" target="_blank">Minnesota Twins at Toronto Blue Jays</a></td><td>10:07 AM</td><td><span class="tv-badge tv-yes">Sportsnet</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833172/padres-athletics" target="_blank">San Diego Padres at Athletics Athletics</a></td><td>1:05 PM</td><td><span class="tv-badge tv-yes">MLB Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833175/cubs-white-sox" target="_blank">Chicago Cubs at Chicago White Sox</a></td><td>1:05 PM</td><td><span class="tv-badge tv-yes">CHSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833177/rangers-rockies" target="_blank">Texas Rangers at Colorado Rockies</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">MLB.TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833180/guardians-angels" target="_blank">Cleveland Guardians at Los Angeles Angels</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833181/athletics-brewers" target="_blank">Athletics Athletics at Milwaukee Brewers</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833178/pirates-tigers" target="_blank">Pittsburgh Pirates at Detroit Tigers</a></td><td>3:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833186/astros-cardinals" target="_blank">Houston Astros at St. Louis Cardinals</a></td><td>3:05 PM</td><td><span class="tv-badge tv-yes">MLB Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833188/mets-nationals" target="_blank">New York Mets at Washington Nationals</a></td><td>3:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833182/marlins-mets" target="_blank">Miami Marlins at New York Mets</a></td><td>3:10 PM</td><td><span class="tv-badge tv-yes">WPIX</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833184/reds-giants" target="_blank">Cincinnati Reds at San Francisco Giants</a></td><td>4:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833176/giants-reds" target="_blank">San Francisco Giants at Cincinnati Reds</a></td><td>6:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833179/diamondbacks-royals" target="_blank">Arizona Diamondbacks at Kansas City Royals</a></td><td>6:05 PM</td><td><span class="tv-badge tv-yes">MLBN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833185/dodgers-mariners" target="_blank">Los Angeles Dodgers at Seattle Mariners</a></td><td>6:10 PM</td><td><span class="tv-badge tv-yes">Sportsnet LA</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/mens-college-basketball/schedule" target="_blank">NCAA Men's Basketball</a> &mdash; 34 games (23 televised)</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851270/tbd-saint-louis" target="_blank">TBD @ Saint Louis Billikens</a></td><td>8:30 AM</td><td><span class="tv-badge tv-yes">USA Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851380/tbd-michigan" target="_blank">TBD @ Michigan Wolverines</a></td><td>9:00 AM</td><td><span class="tv-badge tv-yes">BTN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851413/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>9:30 AM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851565/tbd-florida" target="_blank">TBD @ Florida Gators</a></td><td>10:00 AM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851225/tbd-uab" target="_blank">TBD @ UAB Blazers</a></td><td>10:00 AM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851272/tbd-dayton" target="_blank">TBD @ Dayton Flyers</a></td><td>11:00 AM</td><td><span class="tv-badge tv-yes">USA Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851381/tbd-illinois" target="_blank">TBD @ Illinois Fighting Illini</a></td><td>11:30 AM</td><td><span class="tv-badge tv-yes">BTN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851414/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851566/tbd-vanderbilt" target="_blank">TBD @ Vanderbilt Commodores</a></td><td>12:30 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851226/tbd-tulsa" target="_blank">TBD @ Tulsa Golden Hurricane</a></td><td>12:30 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401858190/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>2:00 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851273/tbd-vcu" target="_blank">TBD @ VCU Rams</a></td><td>2:00 PM</td><td><span class="tv-badge tv-yes">USA Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851315/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>2:30 PM</td><td><span class="tv-badge tv-yes">FOX</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851382/tbd-nebraska" target="_blank">TBD @ Nebraska Cornhuskers</a></td><td>3:30 PM</td><td><span class="tv-badge tv-yes">BTN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851567/tbd-alabama" target="_blank">TBD @ Alabama Crimson Tide</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">SEC Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401858191/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851316/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">FS1</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851383/tbd-michigan-st" target="_blank">TBD @ Michigan State Spartans</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">BTN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851395/tbd-uc-irvine" target="_blank">TBD @ UC Irvine Anteaters</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851568/tbd-arkansas" target="_blank">TBD @ Arkansas Razorbacks</a></td><td>6:30 PM</td><td><span class="tv-badge tv-yes">SEC Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851503/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>6:30 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851397/tbd-hawai’i" target="_blank">TBD @ Hawai'i Rainbow Warriors</a></td><td>8:30 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851504/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>8:59 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 4px;">
+      <summary style="font-size: 13px; padding: 8px 14px; color: #888;">+ 11 more games (ESPN+ / streaming only)</summary>
+      <div class="section-content">
+        <table>
+          <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851722/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851475/tbd-howard" target="_blank">TBD @ Howard Bison</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851304/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851181/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851274/tbd-saint-josephs" target="_blank">TBD @ Saint Joseph's Hawks</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">CNBC</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851476/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>5:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851723/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851736/tbd-utah-valley" target="_blank">TBD @ Utah Valley Wolverines</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851305/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>6:30 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851182/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>6:30 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851738/tbd-ca-baptist" target="_blank">TBD @ California Baptist Lancers</a></td><td>8:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        </table>
+      </div>
+    </details>
+    <div class="sport-league"><a href="https://www.espn.com/womens-college-basketball/schedule" target="_blank">NCAA Women's Basketball</a> &mdash; 25 games (1 televised)</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851211/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>2:00 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 4px;">
+      <summary style="font-size: 13px; padding: 8px 14px; color: #888;">+ 24 more games (ESPN+ / streaming only)</summary>
+      <div class="section-content">
+        <table>
+          <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856465/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856464/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>7:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851771/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>8:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856453/tbd-charleston" target="_blank">TBD @ Charleston Cougars</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851482/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851509/tbd-murray-st" target="_blank">TBD @ Murray State Racers</a></td><td>10:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851483/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856454/tbd-stony-brook" target="_blank">TBD @ Stony Brook Seawolves</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851777/tbd-ca-baptist" target="_blank">TBD @ California Baptist Lancers</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851404/tbd-uc-irvine" target="_blank">TBD @ UC Irvine Anteaters</a></td><td>12:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851510/bradley-northern-iowa" target="_blank">Bradley Braves @ Northern Iowa Panthers</a></td><td>12:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851449/brown-princeton" target="_blank">Brown Bears @ Princeton Tigers</a></td><td>1:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851818/tbd-abilene-chrstn" target="_blank">TBD @ Abilene Christian Wildcats</a></td><td>2:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851772/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>2:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851409/tbd-uc-san-diego" target="_blank">TBD @ UC San Diego Tritons</a></td><td>2:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856455/tbd-campbell" target="_blank">TBD @ Campbell Fighting Camels</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851425/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>3:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851511/tbd-belmont" target="_blank">TBD @ Belmont Bruins</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851218/tbd-rice" target="_blank">TBD @ Rice Owls</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851450/harvard-columbia" target="_blank">Harvard Crimson @ Columbia Lions</a></td><td>4:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856456/tbd-drexel" target="_blank">TBD @ Drexel Dragons</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851427/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851512/tbd-illinois-st" target="_blank">TBD @ Illinois State Redbirds</a></td><td>6:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851219/tbd-east-carolina" target="_blank">TBD @ East Carolina Pirates</a></td><td>6:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        </table>
+      </div>
+    </details>
+    <div class="sport-league"><a href="https://www.espn.com/tennis/schedule" target="_blank">ATP Tennis</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/411-2026/competitionType/2" target="_blank">BNP Paribas Open</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/tennis/schedule" target="_blank">WTA Tennis</a> &mdash; 3 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/411-2026/competitionType/2" target="_blank">BNP Paribas Open</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/1013-2026/competitionType/2" target="_blank">Megasaray Hotels Open 3</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/1063-2026/competitionType/2" target="_blank">Austin 125 2</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/esp.1" target="_blank">La Liga</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/748422/villarreal-alaves" target="_blank">Villarreal at Alavés</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">ESPN Deportes</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/ger.1" target="_blank">Bundesliga</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/746944/st-pauli-borussia-monchengladbach" target="_blank">St. Pauli at Borussia Mönchengladbach</a></td><td>12:30 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/ita.1" target="_blank">Serie A</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/737067/parma-torino" target="_blank">Parma at Torino</a></td><td>12:45 PM</td><td><span class="tv-badge tv-no">Paramount+</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/fra.1" target="_blank">Ligue 1</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/746640/aj-auxerre-marseille" target="_blank">AJ Auxerre at Marseille</a></td><td>12:45 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/mex.1" target="_blank">Liga MX</a> &mdash; 2 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401840905/necaxa-puebla" target="_blank">Necaxa at Puebla</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401840906/monterrey-fc-juarez" target="_blank">Monterrey at FC Juarez</a></td><td>8:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 8px;">
+      <summary style="font-size: 13px; padding: 10px 14px; color: #888;">Other Sports <span class="section-badge">PGA Tour (1) &middot; Formula 1 (1) &middot; College Baseball (79)</span></summary>
+      <div class="section-content">
+    <div class="sport-league"><a href="https://www.espn.com/golf/schedule" target="_blank">PGA Tour</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/golf/leaderboard?tournamentId=401811937" target="_blank">THE PLAYERS Championship</a></td><td>9:00 PM</td><td><span class="tv-badge tv-yes">ESPN+</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/f1/schedule" target="_blank">Formula 1</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/f1/race/_/id/600057428" target="_blank">Heineken Chinese Grand Prix</a></td><td>8:30 PM</td><td><span class="tv-badge tv-no">Apple TV</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/college-baseball/schedule" target="_blank">College Baseball</a> &mdash; 79 games</div>
+    <p class="muted" style="margin-top: 4px;">79 games, mostly on ESPN+. <a href="https://www.espn.com/college-baseball/schedule" target="_blank">Full schedule on ESPN</a></p>
+      </div>
+    </details></div>
+<div class="day-panel" id="day-6" style="display: none;"><div class="day-header">Sat, Mar 14 &mdash; 195 games</div>    <div class="sport-league"><a href="https://www.espn.com/nba/schedule" target="_blank">NBA</a> &mdash; 7 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810824/nets-76ers" target="_blank">Brooklyn Nets at Philadelphia 76ers</a></td><td>10:00 AM</td><td><span class="tv-badge tv-yes">YES</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810825/bucks-hawks" target="_blank">Milwaukee Bucks at Atlanta Hawks</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN WI</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810828/hornets-spurs" target="_blank">Charlotte Hornets at San Antonio Spurs</a></td><td>12:30 PM</td><td><span class="tv-badge tv-yes">FanDuel SN SE</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810826/wizards-celtics" target="_blank">Washington Wizards at Boston Celtics</a></td><td>3:00 PM</td><td><span class="tv-badge tv-yes">NBA TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810827/magic-heat" target="_blank">Orlando Magic at Miami Heat</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN FL</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810829/nuggets-lakers" target="_blank">Denver Nuggets at Los Angeles Lakers</a></td><td>5:30 PM</td><td><span class="tv-badge tv-yes">ABC</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nba/game/_/gameId/401810830/kings-clippers" target="_blank">Sacramento Kings at LA Clippers</a></td><td>7:30 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/nhl/schedule" target="_blank">NHL</a> &mdash; 14 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803394/ducks-senators" target="_blank">Anaheim Ducks at Ottawa Senators</a></td><td>10:00 AM</td><td><span class="tv-badge tv-yes">KCOP</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803395/bruins-capitals" target="_blank">Boston Bruins at Washington Capitals</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">ABC</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803396/avalanche-jets" target="_blank">Colorado Avalanche at Winnipeg Jets</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">Altitude Sports</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803397/rangers-wild" target="_blank">New York Rangers at Minnesota Wild</a></td><td>3:00 PM</td><td><span class="tv-badge tv-yes">MSG</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803398/maple-leafs-sabres" target="_blank">Toronto Maple Leafs at Buffalo Sabres</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">NHL Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803399/sharks-canadiens" target="_blank">San Jose Sharks at Montreal Canadiens</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">NBC Sports BA</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803400/hurricanes-lightning" target="_blank">Carolina Hurricanes at Tampa Bay Lightning</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN South</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803401/kings-devils" target="_blank">Los Angeles Kings at New Jersey Devils</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN West</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803402/flames-islanders" target="_blank">Calgary Flames at New York Islanders</a></td><td>4:00 PM</td><td><span class="tv-badge tv-yes">MSG2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803403/blue-jackets-flyers" target="_blank">Columbus Blue Jackets at Philadelphia Flyers</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">NBC Sports Phil</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803404/red-wings-stars" target="_blank">Detroit Red Wings at Dallas Stars</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">FanDuel SN DET</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803405/penguins-mammoth" target="_blank">Pittsburgh Penguins at Utah Mammoth</a></td><td>6:00 PM</td><td><span class="tv-badge tv-yes">Utah 16</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803406/kraken-canucks" target="_blank">Seattle Kraken at Vancouver Canucks</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">KONG</span></td></tr>
+      <tr><td><a href="https://www.espn.com/nhl/game/_/gameId/401803407/blackhawks-golden-knights" target="_blank">Chicago Blackhawks at Vegas Golden Knights</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">CHSN</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/mlb/schedule" target="_blank">MLB</a> &mdash; 17 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833205/marlins-nationals" target="_blank">Miami Marlins at Washington Nationals</a></td><td>9:05 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833198/rays-twins" target="_blank">Tampa Bay Rays at Minnesota Twins</a></td><td>10:05 AM</td><td><span class="tv-badge tv-yes">KMSP-TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833199/phillies-yankees" target="_blank">Philadelphia Phillies at New York Yankees</a></td><td>10:05 AM</td><td><span class="tv-badge tv-yes">NBC Sports Phil +</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833200/orioles-pirates" target="_blank">Baltimore Orioles at Pittsburgh Pirates</a></td><td>10:05 AM</td><td><span class="tv-badge tv-yes">MASN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833204/tigers-blue-jays" target="_blank">Detroit Tigers at Toronto Blue Jays</a></td><td>10:07 AM</td><td><span class="tv-badge tv-yes">MLB Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833196/cardinals-marlins" target="_blank">St. Louis Cardinals at Miami Marlins</a></td><td>10:10 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833189/royals-athletics" target="_blank">Kansas City Royals at Athletics Athletics</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833191/dodgers-white-sox" target="_blank">Los Angeles Dodgers at Chicago White Sox</a></td><td>1:05 PM</td><td><span class="tv-badge tv-yes">CHSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833192/rangers-reds" target="_blank">Texas Rangers at Cincinnati Reds</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833202/diamondbacks-giants" target="_blank">Arizona Diamondbacks at San Francisco Giants</a></td><td>1:05 PM</td><td><span class="tv-badge tv-yes">MLB Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833203/padres-rangers" target="_blank">San Diego Padres at Texas Rangers</a></td><td>1:05 PM</td><td><span class="tv-badge tv-yes">Rangers Sports Network</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833193/cubs-rockies" target="_blank">Chicago Cubs at Colorado Rockies</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833195/mariners-angels" target="_blank">Seattle Mariners at Los Angeles Angels</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833197/rockies-brewers" target="_blank">Colorado Rockies at Milwaukee Brewers</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833201/guardians-padres" target="_blank">Cleveland Guardians at San Diego Padres</a></td><td>1:10 PM</td><td><span class="tv-badge tv-no">MLB.TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833190/red-sox-braves" target="_blank">Boston Red Sox at Atlanta Braves</a></td><td>3:05 PM</td><td><span class="tv-badge tv-no">MLB.TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mlb/game/_/gameId/401833194/mets-astros" target="_blank">New York Mets at Houston Astros</a></td><td>3:05 PM</td><td><span class="tv-badge tv-yes">MLB Net</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/mens-college-basketball/schedule" target="_blank">NCAA Men's Basketball</a> &mdash; 21 games (20 televised)</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851435/cornell-yale" target="_blank">Cornell Big Red @ Yale Bulldogs</a></td><td>8:00 AM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851206/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>8:00 AM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851569/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>10:00 AM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851477/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>10:00 AM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851384/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>10:00 AM</td><td><span class="tv-badge tv-yes">CBS</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851275/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>10:00 AM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851227/tbd-south-florida" target="_blank">TBD @ South Florida Bulls</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851570/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>12:30 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851386/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>12:30 PM</td><td><span class="tv-badge tv-yes">CBS</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851276/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>12:30 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851228/tbd-wichita-st" target="_blank">TBD @ Wichita State Shockers</a></td><td>2:30 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851505/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>3:00 PM</td><td><span class="tv-badge tv-yes">CBS</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851306/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>3:00 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851317/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>3:30 PM</td><td><span class="tv-badge tv-yes">FOX</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851726/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>4:30 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401858192/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>5:00 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851415/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>5:30 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851183/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>5:30 PM</td><td><span class="tv-badge tv-yes">ESPN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851398/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>7:00 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+      <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851739/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>8:59 PM</td><td><span class="tv-badge tv-yes">ESPN2</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 4px;">
+      <summary style="font-size: 13px; padding: 8px 14px; color: #888;">+ 1 more games (ESPN+ / streaming only)</summary>
+      <div class="section-content">
+        <table>
+          <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401851436/penn-harvard" target="_blank">Pennsylvania Quakers @ Harvard Crimson</a></td><td>11:00 AM</td><td><span class="tv-badge tv-yes">ESPNEWS</span></td></tr>
+        </table>
+      </div>
+    </details>
+    <div class="sport-league"><a href="https://www.espn.com/womens-college-basketball/schedule" target="_blank">NCAA Women's Basketball</a> &mdash; 12 games (6 televised)</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856466/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>8:00 AM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851773/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>10:00 AM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851819/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>12:30 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851451/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>2:30 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851429/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>2:30 PM</td><td><span class="tv-badge tv-yes">CBSSN</span></td></tr>
+      <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851220/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>6:30 PM</td><td><span class="tv-badge tv-yes">ESPNU</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 4px;">
+      <summary style="font-size: 13px; padding: 8px 14px; color: #888;">+ 6 more games (ESPN+ / streaming only)</summary>
+      <div class="section-content">
+        <table>
+          <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856457/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851518/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>11:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851484/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">ESPNEWS</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401856458/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>1:30 PM</td><td><span class="tv-badge tv-no">FloSports</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851520/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>2:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        <tr><td><a href="https://www.espn.com/womens-college-basketball/game/_/gameId/401851412/tbd-tbd" target="_blank">TBD @ TBD</a></td><td>3:00 PM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+        </table>
+      </div>
+    </details>
+    <div class="sport-league"><a href="https://www.espn.com/tennis/schedule" target="_blank">ATP Tennis</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/411-2026/competitionType/2" target="_blank">BNP Paribas Open</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/tennis/schedule" target="_blank">WTA Tennis</a> &mdash; 3 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/411-2026/competitionType/2" target="_blank">BNP Paribas Open</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/1013-2026/competitionType/2" target="_blank">Megasaray Hotels Open 3</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/tennis/scoreboard/tournament/_/eventId/1063-2026/competitionType/2" target="_blank">Austin 125 2</a></td><td>9:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/eng.1" target="_blank">Premier League</a> &mdash; 5 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/740888/afc-bournemouth-burnley" target="_blank">AFC Bournemouth at Burnley</a></td><td>8:00 AM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/740894/brighton-hove-albion-sunderland" target="_blank">Brighton &amp; Hove Albion at Sunderland</a></td><td>8:00 AM</td><td><span class="tv-badge tv-yes">USA Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/740886/everton-arsenal" target="_blank">Everton at Arsenal</a></td><td>10:30 AM</td><td><span class="tv-badge tv-yes">USA Net</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/740889/newcastle-united-chelsea" target="_blank">Newcastle United at Chelsea</a></td><td>10:30 AM</td><td><span class="tv-badge tv-no">Peacock</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/740895/manchester-city-west-ham-united" target="_blank">Manchester City at West Ham United</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">USA Net</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/esp.1" target="_blank">La Liga</a> &mdash; 4 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/748414/athletic-club-girona" target="_blank">Athletic Club at Girona</a></td><td>6:00 AM</td><td><span class="tv-badge tv-yes">ESPN Deportes</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/748423/getafe-atletico-madrid" target="_blank">Getafe at Atlético Madrid</a></td><td>8:15 AM</td><td><span class="tv-badge tv-yes">ESPN Deportes</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/748419/valencia-real-oviedo" target="_blank">Valencia at Real Oviedo</a></td><td>10:30 AM</td><td><span class="tv-badge tv-yes">ESPN Deportes</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/748418/elche-real-madrid" target="_blank">Elche at Real Madrid</a></td><td>1:00 PM</td><td><span class="tv-badge tv-yes">ESPN Deportes</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/ger.1" target="_blank">Bundesliga</a> &mdash; 5 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/746950/bayern-munich-bayer-leverkusen" target="_blank">Bayern Munich at Bayer Leverkusen</a></td><td>7:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/746951/fc-augsburg-borussia-dortmund" target="_blank">FC Augsburg at Borussia Dortmund</a></td><td>7:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/746943/1-fc-heidenheim-1846-eintracht-frankfurt" target="_blank">1. FC Heidenheim 1846 at Eintracht Frankfurt</a></td><td>7:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/746947/vfl-wolfsburg-tsg-hoffenheim" target="_blank">VfL Wolfsburg at TSG Hoffenheim</a></td><td>7:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/746949/fc-cologne-hamburg-sv" target="_blank">FC Cologne at Hamburg SV</a></td><td>10:30 AM</td><td><span class="tv-badge tv-no">ESPN+</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/ita.1" target="_blank">Serie A</a> &mdash; 3 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/737072/atalanta-internazionale" target="_blank">Atalanta at Internazionale</a></td><td>7:00 AM</td><td><span class="tv-badge tv-no">Paramount+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/737070/lecce-napoli" target="_blank">Lecce at Napoli</a></td><td>10:00 AM</td><td><span class="tv-badge tv-no">Paramount+</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/737066/juventus-udinese" target="_blank">Juventus at Udinese</a></td><td>12:45 PM</td><td><span class="tv-badge tv-no">Paramount+</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/fra.1" target="_blank">Ligue 1</a> &mdash; 3 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/746639/lens-lorient" target="_blank">Lens at Lorient</a></td><td>9:00 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/746637/nice-angers" target="_blank">Nice at Angers</a></td><td>11:00 AM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/746642/brest-as-monaco" target="_blank">Brest at AS Monaco</a></td><td>1:05 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/usa.1" target="_blank">MLS</a> &mdash; 12 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/761484/red-bull-new-york-toronto-fc" target="_blank">Red Bull New York at Toronto FC</a></td><td>10:00 AM</td><td><span class="tv-badge tv-no">Apple TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/761485/philadelphia-union-atlanta-united-fc" target="_blank">Philadelphia Union at Atlanta United FC</a></td><td>12:00 PM</td><td><span class="tv-badge tv-yes">FOX</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/761486/nashville-sc-columbus-crew" target="_blank">Nashville SC at Columbus Crew</a></td><td>3:00 PM</td><td><span class="tv-badge tv-yes">FS1</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/761489/inter-miami-cf-charlotte-fc" target="_blank">Inter Miami CF at Charlotte FC</a></td><td>4:30 PM</td><td><span class="tv-badge tv-no">Apple TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/761487/colorado-rapids-new-york-city-fc" target="_blank">Colorado Rapids at New York City FC</a></td><td>4:30 PM</td><td><span class="tv-badge tv-no">Apple TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/761488/cf-montreal-orlando-city-sc" target="_blank">CF Montréal at Orlando City SC</a></td><td>4:30 PM</td><td><span class="tv-badge tv-no">Apple TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/761491/dc-united-chicago-fire-fc" target="_blank">D.C. United at Chicago Fire FC</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">Apple TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/761490/san-diego-fc-fc-dallas" target="_blank">San Diego FC at FC Dallas</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">Apple TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/761492/portland-timbers-houston-dynamo-fc" target="_blank">Portland Timbers at Houston Dynamo FC</a></td><td>5:30 PM</td><td><span class="tv-badge tv-no">Apple TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/761493/sporting-kansas-city-la-galaxy" target="_blank">Sporting Kansas City at LA Galaxy</a></td><td>6:30 PM</td><td><span class="tv-badge tv-no">Apple TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/761494/austin-fc-real-salt-lake" target="_blank">Austin FC at Real Salt Lake</a></td><td>6:30 PM</td><td><span class="tv-badge tv-no">Apple TV</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/761495/st-louis-city-sc-lafc" target="_blank">St. Louis CITY SC at LAFC</a></td><td>7:30 PM</td><td><span class="tv-badge tv-no">Apple TV</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/soccer/schedule/_/league/mex.1" target="_blank">Liga MX</a> &mdash; 5 games</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401840908/pachuca-atletico-de-san-luis" target="_blank">Pachuca at Atlético de San Luis</a></td><td>4:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401840907/santos-guadalajara" target="_blank">Santos at Guadalajara</a></td><td>4:07 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401840909/tijuana-leon" target="_blank">Tijuana at León</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401840910/atlas-toluca" target="_blank">Atlas at Toluca</a></td><td>6:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+      <tr><td><a href="https://www.espn.com/soccer/match/_/gameId/401840911/cruz-azul-pumas-unam" target="_blank">Cruz Azul at Pumas UNAM</a></td><td>8:00 PM</td><td><span class="tv-badge tv-no">No TV info</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/mma/schedule/_/league/ufc" target="_blank">UFC</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/mma/fightcenter/_/id/600057364/league/ufc" target="_blank">UFC Fight Night: Emmett vs. Vallejos</a></td><td>2:00 PM</td><td><span class="tv-badge tv-no">Paramount+</span></td></tr>
+    </table>
+    <details style="background: #121a33; border: 1px solid #222; margin-top: 8px;">
+      <summary style="font-size: 13px; padding: 10px 14px; color: #888;">Other Sports <span class="section-badge">PGA Tour (1) &middot; Formula 1 (1) &middot; College Baseball (80)</span></summary>
+      <div class="section-content">
+    <div class="sport-league"><a href="https://www.espn.com/golf/schedule" target="_blank">PGA Tour</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/golf/leaderboard?tournamentId=401811937" target="_blank">THE PLAYERS Championship</a></td><td>9:00 PM</td><td><span class="tv-badge tv-yes">ESPN+</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/f1/schedule" target="_blank">Formula 1</a> &mdash; 1 game</div>
+    <table>
+      <tr><th>Matchup</th><th>Time (PT)</th><th>TV</th></tr>
+      <tr><td><a href="https://www.espn.com/f1/race/_/id/600057428" target="_blank">Heineken Chinese Grand Prix</a></td><td>8:30 PM</td><td><span class="tv-badge tv-no">Apple TV</span></td></tr>
+    </table>
+    <div class="sport-league"><a href="https://www.espn.com/college-baseball/schedule" target="_blank">College Baseball</a> &mdash; 80 games</div>
+    <p class="muted" style="margin-top: 4px;">80 games, mostly on ESPN+. <a href="https://www.espn.com/college-baseball/schedule" target="_blank">Full schedule on ESPN</a></p>
+      </div>
+    </details></div>
 
-  </div>
-</details>
-
-<p style="text-align: center; color: #444; font-size: 12px; margin-top: 20px;">Data from ESPN API &middot; Updated daily</p>
+<p style="text-align: center; color: #444; font-size: 12px; margin-top: 20px;">Data from ESPN API &middot; 1048 games this week</p>
 
 </div>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Deactivate all tabs
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.day-panel').forEach(p => p.style.display = 'none');
+    // Activate clicked tab
+    btn.classList.add('active');
+    const dayIdx = btn.getAttribute('data-day');
+    document.getElementById('day-' + dayIdx).style.display = 'block';
+  });
+});
+</script>
+
 </body>
 </html>
